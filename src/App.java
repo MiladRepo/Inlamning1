@@ -21,13 +21,15 @@ public class App {
 
         } while (!text.equalsIgnoreCase("stop"));
 
-        System.out.println("Antal ord: " + CountWord.getList().size());
+        System.out.println("Antal ord: " + CountWord.getListCount());
 
-        for (String item : CountWord.getList()) {
-            System.out.print(item.length() + " ");
+        System.out.print("Längd på varje ord: ");
+
+        for (Integer word : CountWord.getWordLengthInList()) {
+            System.out.print(word + " ");
         }
 
-        System.out.println("Längsta ordet: " + CountWord.getList().stream().max(Comparator.comparing(String::length)).get());
+        System.out.println("\nLängsta ordet: " + CountWord.getLongestWord());
 
         scanner.close();
     }

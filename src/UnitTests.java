@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
@@ -14,7 +15,7 @@ public class UnitTests {
 
         CountWord.addWord("Hej1");
 
-        var count = CountWord.getList().size();
+        var count = CountWord.getListCount();
 
         assertEquals(2, count);
     }
@@ -33,8 +34,18 @@ public class UnitTests {
         CountWord.addWord("hejhejhejhejhej");
         CountWord.addWord("hejhejh");
 
-        var longestWord = CountWord.getList().stream().max(Comparator.comparing(String::length)).get();
+        var longestWord = CountWord.getLongestWord();
 
         assertEquals("hejhejhejhejhej", longestWord);
+    }
+    @Test 
+    public void testWordLength(){
+        CountWord.addWord("hejhej");
+
+        var wordLength = CountWord.getWordLengthInList();
+
+        var arr = new int[]{6};
+
+        assertArrayEquals(arr, wordLength);
     }
 }
