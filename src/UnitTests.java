@@ -37,6 +37,7 @@ public class UnitTests {
         var longestWord = CountWord.getLongestWord();
 
         assertEquals("hejhejhejhejhej", longestWord);
+        
     }
     @Test 
     public void testWordLength(){
