@@ -8,28 +8,43 @@ import java.util.Comparator;
 
 
 public class UnitTests {
-    @Test
-    public void testAddWordCount(){
 
-        CountWord.addWord("Hej");
+    public UnitTests() {
+        CountWord.reset();
+    }
+
+    @Test
+    public void testRowCount(){
+
+        CountWord.addWord("Hej Hej");
 
         CountWord.addWord("Hej1");
 
-        var count = CountWord.getListCount();
+        var count = CountWord.getRowCount();
 
         assertEquals(2, count);
     }
 
     @Test 
-    public void testAddWordWithStop(){
+    public void testWordWithStop(){
 
-        CountWord.addWord("stop");
+        CountWord.addWord("Hej stop");
         
-        assertEquals(0, CountWord.getList().size());
+        assertEquals(1, CountWord.getList().size());
     }
+
+    @Test 
+    public void testWordWithCapitalStop(){
+
+        CountWord.addWord("Hej Stop");
+        
+        assertEquals(1, CountWord.getList().size());
+    }
+
 
     @Test
     public void testLongestWord(){
+
         CountWord.addWord("hejhej");
         CountWord.addWord("hejhejhejhejhej");
         CountWord.addWord("hejhejh");
@@ -39,13 +54,25 @@ public class UnitTests {
         assertEquals("hejhejhejhejhej", longestWord);
     }
     @Test 
-    public void testWordLength(){
-        CountWord.addWord("hejhej");
+    public void testLetterCount(){
 
-        var wordLength = CountWord.getWordLengthInList();
+        CountWord.addWord("hejhej hej");
+        CountWord.addWord("hej2");
 
-        var arr = new int[]{6};
+        var letterCount = CountWord.getLetterCount();
 
-        assertArrayEquals(arr, wordLength);
+        assertEquals(13, letterCount);
     }
+
+    @Test 
+    public void testWordCount(){
+
+        CountWord.addWord("hejhej hej");
+        CountWord.addWord("hej");
+
+        var wordCount = CountWord.getList().size();
+
+        assertEquals(3, wordCount);
+    }
+    
 }

@@ -15,21 +15,17 @@ public class App {
         do
         {
             System.out.print("Säg nåt: ");
-            text = scanner.next();
+            text = scanner.nextLine();
 
             CountWord.addWord(text);
 
-        } while (!text.equalsIgnoreCase("stop"));
+        } while (!text.contains("stop"));
 
-        System.out.println("Antal ord: " + CountWord.getListCount());
+        System.out.println("Antal rader: " + CountWord.getRowCount());
 
-        System.out.print("Längd på varje ord: ");
+        System.out.println("Antal bokstäver: " + CountWord.getLetterCount());
 
-        for (Integer word : CountWord.getWordLengthInList()) {
-            System.out.print(word + " ");
-        }
-
-        System.out.println("\nLängsta ordet: " + CountWord.getLongestWord());
+        System.out.println("Längsta ordet: " + CountWord.getLongestWord());
 
         scanner.close();
     }
