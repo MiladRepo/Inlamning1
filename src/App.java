@@ -19,9 +19,11 @@ public class App {
 
             CountWord.addWord(text);
 
-        } while (!text.contains("stop"));
+        } while (!text.toLowerCase().contains("stop"));
 
         System.out.println("Antal rader: " + CountWord.getRowCount());
+
+        System.out.println("Antal ord: " + CountWord.getList().size());
 
         System.out.println("Antal bokstäver: " + CountWord.getLetterCount());
 

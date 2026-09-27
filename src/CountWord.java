@@ -11,12 +11,12 @@ public class CountWord {
 
     public static void addWord(String text)
     {
+        if(text.toLowerCase().contains("stop"))
+            return;
+
         var splittedList  = Arrays.asList(text.split(" "));
 
         _listOfWords.addAll(_listOfWords.size(), splittedList);
-
-        _listOfWords.removeIf(Predicate.isEqual("stop"));
-        _listOfWords.removeIf(Predicate.isEqual("Stop"));
 
         _counter++;
     }

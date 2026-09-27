@@ -30,7 +30,7 @@ public class UnitTests {
 
         CountWord.addWord("Hej stop");
         
-        assertEquals(1, CountWord.getList().size());
+        assertEquals(0, CountWord.getList().size());
     }
 
     @Test 
@@ -38,7 +38,7 @@ public class UnitTests {
 
         CountWord.addWord("Hej Stop");
         
-        assertEquals(1, CountWord.getList().size());
+        assertEquals(0, CountWord.getList().size());
     }
 
 
