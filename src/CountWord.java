@@ -16,7 +16,7 @@ public class CountWord {
 
         var splittedList  = Arrays.asList(text.split(" "));
 
-        _listOfWords.addAll(_listOfWords.size(), splittedList);
+        _listOfWords.addAll(splittedList);
 
         _counter++;
     }
